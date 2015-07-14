@@ -1,4 +1,4 @@
-var app = angular.module('myMessenger', ['ui.router']);
+var app = angular.module('myMessenger', ['ui.router', 'ngResource']);
 
 app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider
@@ -12,8 +12,14 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 });
 
+//////////********Services***********/////////
+app.factory('Messages', function($resource){
+    return $resource('/messages/:id', {});        
+});
+
+//////////********Controllers***********/////////
 app.controller('chatCtrl', 
-    function($scope){
+    function($scope, Messages){
      //Array of all messages
      $scope.messages = [
         {sender: 'Alice', body:'Hello, how are you?', side:'left'},
@@ -34,3 +40,4 @@ app.controller('chatCtrl',
     }
 
 });
+
