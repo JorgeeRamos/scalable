@@ -10,25 +10,13 @@
     <body ng-app="myMessenger" ng-controller="myController">
         
         <!-- Heading -->
-        <h1>Server: {{hello}}</h1>
+        <h1>Server</h1>
         
         <!-- Chat messages -->
-        <div>
-            <div class="bubble left">
-                <h4>Alice:</h4>
-                <div>Hello, how are you?</div>
-            </div>
-        </div>
-        <div>
-            <div class="bubble right">
-                <h4>Bob:</h4>
-                <div>I am fine, how are you?</div>
-            </div>
-        </div>
-        <div>
-            <div class="bubble left">
-                <h4>Alice:</h4>
-                <div>Never been better</div>
+        <div ng-repeat="message in messages">
+            <div class="bubble" ng-class="message.side">
+                <h4>{{message.sender}}:</h4>
+                <div>{{message.body}}</div>
             </div>
         </div>
         
