@@ -6,8 +6,8 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
 /******** Database Config ************/
-//require('./models/post');
-//var Post = mongoose.model('Post');
+require('./models/message');
+var Message = mongoose.model('Message');
 mongoose.connect('mongodb://localhost/deep');
 
 /******** Configuration  **********/
