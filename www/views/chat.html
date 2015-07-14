@@ -1,0 +1,24 @@
+<!-- Heading -->
+<h1>Server</h1>
+
+<!-- Chat messages -->
+<div ng-repeat="message in messages">
+    <div class="bubble" ng-class="message.side">
+        <h4>{{message.sender}}:</h4>
+        <div>{{message.body}}</div>
+    </div>
+</div>
+
+
+<!-- Input Form -->
+<div class="bubble left">
+    <form>
+    <h2>Enter a message: </h2>
+    <div class="input-group">
+        <input class="form-control" type="text" name="message" placeholder="Message" ng-model="new_message">
+        <span class="input-group-btn">
+            <button class="btn btn-default btn-success" type="button" ng-click="add_new_message()">Submit</button>
+        </span>
+    </div>
+    </form>
+</div>    

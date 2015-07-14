@@ -1,0 +1,11 @@
+{
+    "version":"0.0.0",
+    "name":"blog",
+    "description":"A test blog app",
+    "dependencies":{
+        "express":"~4.9.0",
+        "body-parser":"*",
+        "method-override": "*",
+        "mongoose":"*"
+     }
+}
