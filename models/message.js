@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 var MessageSchema = new mongoose.Schema({
-        //Insert Schema here
+        sender: String,
+        body: String
     });
 
 mongoose.model('Message', MessageSchema);
