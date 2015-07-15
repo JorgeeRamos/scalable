@@ -34,13 +34,34 @@ app.all('*', function(req, res, next){
 
 //Get all Messages
 app.get('/messages', function(req, res){
-    //Insert messages fetching code here
+    Message.find({})
+        .exec(function(err, messages){
+                if(err){
+                    console.log("ERROR: " + err)
+                    res.sendStatus(500);
+                }else{
+                    res.json(messages);
+                }
+            });
 
 });
 
+//Save new message
 app.post('/messages', function(req, res){
-    //Insert code for creating a new message here
- 
+
+   var message = new Message({
+            sender: req.body.sender,
+            body: req.body.body
+        });
+    message.save(function(err){
+            if(err){
+                console.log("ERROR: " + err)
+                res.sendStatus(500);
+            }else{
+                res.send(message);
+            }
+        });
+
 });
 
 //Run app
