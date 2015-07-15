@@ -32,6 +32,17 @@ app.all('*', function(req, res, next){
     next();
 });
 
+//Get all Messages
+app.get('/messages', function(req, res){
+    //Insert messages fetching code here
+
+});
+
+app.post('/messages', function(req, res){
+    //Insert code for creating a new message here
+ 
+});
+
 //Run app
 var server = app.listen(3000, function () {
 
